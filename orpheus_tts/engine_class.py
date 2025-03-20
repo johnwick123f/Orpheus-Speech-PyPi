@@ -42,7 +42,7 @@ class OrpheusModel:
         engine_args = AsyncEngineArgs(
             model=self.model_name,
             dtype=self.dtype,
-            gpu_memory_utilization=0.4,
+            gpu_memory_utilization=0.7,
             max_model_len=4096,
         )
         return AsyncLLMEngine.from_engine_args(engine_args)
