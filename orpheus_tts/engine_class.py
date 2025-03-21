@@ -45,6 +45,7 @@ class OrpheusModel:
             gpu_memory_utilization=0.7,
             max_model_len=4096,
             quantization="bitsandbytes"
+            load_format="bitsandbytes",
         )
         return AsyncLLMEngine.from_engine_args(engine_args)
     
