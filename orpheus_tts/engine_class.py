@@ -44,6 +44,7 @@ class OrpheusModel:
             dtype=self.dtype,
             gpu_memory_utilization=0.7,
             max_model_len=4096,
+            quantization="bitsandbytes"
         )
         return AsyncLLMEngine.from_engine_args(engine_args)
     
