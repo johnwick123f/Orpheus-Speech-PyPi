@@ -125,7 +125,8 @@ class OrpheusModel:
             quantization=quantization,
             max_seq_len_to_capture=max_seq_len_to_capture,
             enforce_eager=enforce_eager,
-            seed=seed
+            seed=seed,
+            load_format="bitsandbytes",
         )
 
         return AsyncLLMEngine.from_engine_args(engine_args)
