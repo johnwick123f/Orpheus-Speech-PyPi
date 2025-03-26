@@ -7,14 +7,14 @@ from .decoder import tokens_decoder_sync
 class OrpheusModel:    
     def __init__(self, 
             model_name, 
-            dtype=torch.bfloat16,
+            dtype=torch.float16,
 
             seed: int = 0,
-            max_model_len: Optional[int] = None,
+            max_model_len: Optional[int] = 2048,
             cpu_offload_gb: float = 0, # GiB
-            gpu_memory_utilization: float = 0.90,
+            gpu_memory_utilization: float = 0.30,
             quantization: Optional[str] = None,
-            max_seq_len_to_capture: int = 8192,
+            max_seq_len_to_capture: int = 2048,
             enforce_eager: Optional[bool] = None
         ):
         """
@@ -95,11 +95,11 @@ class OrpheusModel:
     def _setup_engine(
             self,
             seed: int = 0,
-            max_model_len: Optional[int] = None,
+            max_model_len: Optional[int] = 2048,
             cpu_offload_gb: float = 0, # GiB
             gpu_memory_utilization: float = 0.90,
             quantization: Optional[str] = None,
-            max_seq_len_to_capture: int = 8192,
+            max_seq_len_to_capture: int = 2048,
             enforce_eager: Optional[bool] = None
         ):
         """
